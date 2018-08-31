@@ -1,6 +1,7 @@
 package fanbin.KnowledgeEveryDay;
 
 import fanbin.KnowledgeEveryDay.Collections.MyHashSet;
+import fanbin.KnowledgeEveryDay.Collections.MyTreeSort;
 import fanbin.KnowledgeEveryDay.UserClass.HashPerson;
 import fanbin.KnowledgeEveryDay.UserClass.Person;
 
@@ -16,6 +17,7 @@ public class MyCollection {
 		 * Set中主要讨论HashSet->LinkedHashSet+SortSet->TreeSet
 		 * 每种Set会单独进行编写，并在最后比较各个Set的异同
 		 */
+		System.out.println("----------HashSet-----------");
 		MyHashSet<String> myHashSet = new MyHashSet<String>(10);
 		myHashSet.add("fanbin");
 		myHashSet.show();
@@ -36,6 +38,21 @@ public class MyCollection {
 		System.out.println("重写HashCode后");
 		myHashPersonHashSet.show(); // 重写HashCode，容器中只会有一条记录
 		
+		System.out.println("----------TreeSet-----------");		
+		MyTreeSort<String> myTreeSort = new MyTreeSort<String>((o1, o2)->o2.compareTo(o1)); //可以指定compareTo
+		myTreeSort.add("1");
+		myTreeSort.add("3");
+		myTreeSort.add("2");
+		myTreeSort.add("2");
+		myTreeSort.add("2");
+		myTreeSort.add("0");
+		myTreeSort.show(); // 3 2 1 0
+		
+		MyTreeSort<HashPerson> myHashTreeSort = new MyTreeSort<HashPerson>((o1, o2)->o2.compareTo(o1)); //可以指定compareTo
+		HashPerson hp3 = new HashPerson("fanbin", 25, "male", "develop");
+		myHashTreeSort.add(hp1);
+		myHashTreeSort.add(hp3);
+		myHashTreeSort.show();
 		// Queue
 		
 		// List
