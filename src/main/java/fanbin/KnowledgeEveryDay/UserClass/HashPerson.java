@@ -1,6 +1,6 @@
 package fanbin.KnowledgeEveryDay.UserClass;
 
-public class HashPerson {
+public class HashPerson implements Comparable{
 
 	private String name;
 	private int age;
@@ -63,5 +63,10 @@ public class HashPerson {
 		} else if (!title.equals(other.title))
 			return false;
 		return true;
+	}
+	
+	@Override
+	public int compareTo(Object o1) {
+		return this.hashCode() - o1.hashCode();
 	}
 }
