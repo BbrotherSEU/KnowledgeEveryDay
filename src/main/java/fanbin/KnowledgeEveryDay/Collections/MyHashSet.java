@@ -10,8 +10,9 @@ public class MyHashSet<E>{
 	
 	/**
 	 * 1. Set有初始化大小
-	 * 2. HashSet可以通过初始化比较器来实现排序，否则是系统默认排序
+	 * 2. HashSet可以认为是无序的
 	 * 3. HashSet 线程不安全
+	 * 4. 最好重写HashCode
 	 * @param cap
 	 */
 	public MyHashSet(int cap) {
