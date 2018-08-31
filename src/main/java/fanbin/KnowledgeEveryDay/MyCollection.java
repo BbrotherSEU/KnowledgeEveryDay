@@ -1,6 +1,7 @@
 package fanbin.KnowledgeEveryDay;
 
 import fanbin.KnowledgeEveryDay.Collections.MyHashSet;
+import fanbin.KnowledgeEveryDay.Collections.MyLinkedHashSet;
 import fanbin.KnowledgeEveryDay.Collections.MyTreeSort;
 import fanbin.KnowledgeEveryDay.UserClass.HashPerson;
 import fanbin.KnowledgeEveryDay.UserClass.Person;
@@ -53,6 +54,23 @@ public class MyCollection {
 		myHashTreeSort.add(hp1);
 		myHashTreeSort.add(hp3);
 		myHashTreeSort.show();
+		
+		System.out.println("----------linkedHashSet-----------");		
+		MyLinkedHashSet<String> myLinkedHashSet = new MyLinkedHashSet<String>(10);
+		myLinkedHashSet.add("10");
+		myLinkedHashSet.add("8");
+		myLinkedHashSet.add("12");
+		myLinkedHashSet.show(); // 按照插入顺序打印
+		myLinkedHashSet.remove("8");
+		myLinkedHashSet.show(); //链表结构 删除数据后 不影响原来顺序
+		
+		/**
+		 * 总结来说
+		 * LinkedHashSet适用于需要按照插入顺序来读取的情况
+		 * HashSet适用于无序的情况
+		 * TreeSet适用于需要排序的情况
+		 * 三种set的核心仍然是无重复
+		 */
 		// Queue
 		
 		// List
