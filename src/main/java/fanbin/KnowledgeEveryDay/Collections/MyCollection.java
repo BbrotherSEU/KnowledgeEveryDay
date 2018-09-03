@@ -1,8 +1,7 @@
-package fanbin.KnowledgeEveryDay;
+package fanbin.KnowledgeEveryDay.Collections;
 
-import fanbin.KnowledgeEveryDay.Collections.MyHashSet;
-import fanbin.KnowledgeEveryDay.Collections.MyLinkedHashSet;
-import fanbin.KnowledgeEveryDay.Collections.MyTreeSort;
+import java.util.NoSuchElementException;
+
 import fanbin.KnowledgeEveryDay.UserClass.HashPerson;
 import fanbin.KnowledgeEveryDay.UserClass.Person;
 
@@ -71,9 +70,22 @@ public class MyCollection {
 		 * TreeSet适用于需要排序的情况
 		 * 三种set的核心仍然是无重复
 		 */
-		// Queue
+		// List and Queue
+		System.out.println("----------ConcurrentLinkedQueue-----------");		
+		MyConcurrentLinkedQueue<String> myConcurrentLinkedQueue = new MyConcurrentLinkedQueue<>();
+		myConcurrentLinkedQueue.add("fanbin");
+		myConcurrentLinkedQueue.add("fanbin1");
+		String head = myConcurrentLinkedQueue.poll();
+		System.out.println(head);
+		try {
+			myConcurrentLinkedQueue.remove(); //队列为空时会抛出异常
+			myConcurrentLinkedQueue.remove();
+			myConcurrentLinkedQueue.remove();
+		} catch (NoSuchElementException e) {
+		}
+		myConcurrentLinkedQueue.show(); // FIFO 所以留下 fanbin1
 		
-		// List
+		// Map
 		
 	}
 }
